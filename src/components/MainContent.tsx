@@ -24,9 +24,7 @@ export function MainContent() {
       </Box>
 
       {/* MPT Visualizer */}
-      <Box flex={1} overflow="auto">
-        <MPTVisualizer />
-      </Box>
+      <MPTVisualizer />
     </Flex>
   )
-} 
+}

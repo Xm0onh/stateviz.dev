@@ -9,7 +9,6 @@ import {
   useColorModeValue,
   Divider
 } from '@chakra-ui/react'
-import { useState } from 'react'
 import { FiGitBranch } from 'react-icons/fi'
 
 interface Algorithm {
@@ -28,9 +27,12 @@ const algorithms: Algorithm[] = [
   }
 ]
 
-export function Sidebar() {
-  const [activeAlgorithm, setActiveAlgorithm] = useState('mpt')
-  
+interface SidebarProps {
+  activeAlgorithm: string | null
+  onAlgorithmSelect: (algorithmId: string | null) => void
+}
+
+export function Sidebar({ activeAlgorithm, onAlgorithmSelect }: SidebarProps) {
   const bgGradient = useColorModeValue(
     'linear(to-b, cyber.600, cyber.800)',
     'linear(to-b, dark.800, dark.900)'
@@ -66,6 +68,10 @@ export function Sidebar() {
             bgGradient="linear(to-r, neon.400, cyber.400)"
             bgClip="text"
             mb={2}
+            cursor="pointer"
+            onClick={() => onAlgorithmSelect(null)}
+            _hover={{ transform: 'scale(1.05)', transition: 'all 0.2s' }}
+            transition="all 0.2s"
           >
             StateViz
           </Text>
@@ -75,6 +81,25 @@ export function Sidebar() {
         </Box>
 
         <Divider borderColor="neon.500" opacity={0.3} />
+
+        {/* Home Button */}
+        <Button
+          variant={activeAlgorithm === null ? 'solid' : 'ghost'}
+          colorScheme={activeAlgorithm === null ? 'neon' : 'gray'}
+          justifyContent="flex-start"
+          onClick={() => onAlgorithmSelect(null)}
+          size="md"
+          _hover={{
+            bg: activeAlgorithm === null ? 'neon.600' : 'whiteAlpha.100',
+            transform: 'translateX(4px)',
+            transition: 'all 0.2s'
+          }}
+          transition="all 0.2s"
+        >
+          <Text fontSize="sm" fontWeight="semibold">
+            🏠 Home
+          </Text>
+        </Button>
 
         {/* Algorithms List */}
         <Box>
@@ -96,7 +121,7 @@ export function Sidebar() {
                 colorScheme={activeAlgorithm === algo.id ? 'neon' : 'gray'}
                 justifyContent="flex-start"
                 leftIcon={<Icon as={algo.icon} />}
-                onClick={() => setActiveAlgorithm(algo.id)}
+                onClick={() => onAlgorithmSelect(algo.id)}
                 size="md"
                 _hover={{
                   bg: activeAlgorithm === algo.id ? 'neon.600' : 'whiteAlpha.100',
