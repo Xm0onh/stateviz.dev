@@ -1,20 +1,39 @@
 # StateViz
 
-Interactive playground for blockchain data structures.
+**Interactive playground for blockchain data structures**
 
-## Features
+Understanding how blockchains organize and manage data is crucial for developers, researchers, and enthusiasts. StateViz makes complex blockchain data structures accessible through interactive visualizations.
 
-- **MPT (Merkle Patricia Trie)** visualization
-- Creative, modern UI with unique color schemes  
-- Easy to add new algorithms
-- Built with TypeScript + Next.js + Chakra UI v2
+## Mission
 
-## Quick Start
+**Make blockchain data structures understandable through hands-on exploration.**
 
-```bash
-# Install dependencies
-yarn install
+Too many developers treat blockchain data structures as black boxes. StateViz breaks them open, letting you see exactly how data flows, how nodes connect, and why these structures are so powerful.
 
-# Start dev server
-yarn dev
-```
+## What You'll Learn
+
+### Merkle Patricia Trie (MPT)
+
+
+## Why StateViz?
+
+**Traditional Learning**: Read documentation → Write code → Hope it works
+
+**StateViz Approach**: Visualize → Interact → Understand → Build confidently
+
+## Design Philosophy
+
+- **Interactive First** - Click, drag, explore
+- **Visual Clarity** - Clean, purposeful design
+- **Progressive Depth** - Start simple, go deep
+- **Real-World Focus** - Actual blockchain use cases
+
+## Get Started
+
+Visit **[stateviz.dev](https://stateviz.dev)** and start exploring.
+
+No installation required. No prior blockchain knowledge needed. Just curiosity.
+
+---
+
+*"The best way to understand a data structure is to see it in action."*
