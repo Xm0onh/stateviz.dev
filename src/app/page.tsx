@@ -5,6 +5,7 @@ import { useState } from 'react'
 import { Sidebar } from '@/components/Sidebar'
 import { MainContent } from '@/components/MainContent'
 import { WelcomePage } from '@/components/WelcomePage'
+import { BloomFilterContent } from '@/components/BloomFilter/BloomFilterContent'
 
 export default function Home() {
   const [activeAlgorithm, setActiveAlgorithm] = useState<string | null>(null)
@@ -14,9 +15,13 @@ export default function Home() {
       return <WelcomePage onAlgorithmSelect={setActiveAlgorithm} />
     }
     
-    // For now, we only have MPT, but this structure makes it easy to add more
+    // Route to different algorithm components
     if (activeAlgorithm === 'mpt') {
       return <MainContent />
+    }
+    
+    if (activeAlgorithm === 'bloom') {
+      return <BloomFilterContent />
     }
     
     return <WelcomePage onAlgorithmSelect={setActiveAlgorithm} />
