@@ -9,7 +9,7 @@ import {
   useColorModeValue,
   Divider
 } from '@chakra-ui/react'
-import { FiGitBranch } from 'react-icons/fi'
+import { FiGitBranch, FiFilter } from 'react-icons/fi'
 
 interface Algorithm {
   id: string
@@ -24,6 +24,12 @@ const algorithms: Algorithm[] = [
     name: 'MPT',
     description: 'Merkle Patricia Trie',
     icon: FiGitBranch
+  },
+  {
+    id: 'bloom',
+    name: 'Bloom Filter',
+    description: 'Probabilistic Data Structure',
+    icon: FiFilter
   }
 ]
 
